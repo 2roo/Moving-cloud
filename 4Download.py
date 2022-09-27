@@ -1,3 +1,4 @@
+import os
 import requests
 
 def download_file(url, filename):
@@ -9,21 +10,33 @@ def download_file(url, filename):
                 f.write(chunk)
     return local_filename
 
-with open("link.txt", "r") as linkfile:
+with open("9link.txt", "r") as linkfile:
     urls = linkfile.readlines()
 
-with open("name.txt", "r") as namefile:
+with open("9path.txt", "r") as namefile:
     names = namefile.readlines()
 
+if not os.path.exists("./download/"):
+    os.makedirs("./download/")
+    
 for i in range(0, len(urls)):
     urllen = len(urls[i])
-    urls[i] = urls[i][0:urllen-1]
+    urls[i] = urls[i][:urllen-1]
     namelen = len(names[i])
     names[i] = "./download/" + names[i][0:namelen-1]
+    
 
+
+    
 for i in range(0, len(urls)):
     if urls[i] == "Folder":
         continue
+    folders = names[i].split("/")
+    folderlen = len(folders)
+    folders = folders[:folderlen-1]
+    paths = "/".join(folders)
+    if not os.path.exists(paths):
+        os.makedirs(paths)
     print(download_file(urls[i], names[i]))
     temp = input("continue? (y/n) >")
     if temp == "n":

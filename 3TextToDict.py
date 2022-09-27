@@ -53,12 +53,6 @@ while True:
         print("d_link:", len(d_link))
         break
     
-    
-        
-    
-    
-            
-
     # #여기부터 parents id 값이 같은 경우 title과 id 출력
     # try:
     # #     print(file["parents"][0]["id"])
@@ -94,12 +88,20 @@ while True:
     # print(file)
     # break
 
-with open("link.txt", "w") as linkfile:
+with open("9link.txt", "w") as linkfile:
     for link in d_link:
         linkfile.write(str(link) + "\n")
 
-with open("name.txt", "w") as namefile:
+with open("9name.txt", "w") as namefile:
     for name in title:
         namefile.write(str(name) + "\n")
+
+with open("9id.txt", "w") as idfile:
+	for ids in id:
+		idfile.write(str(ids) + "\n")
+        
+with open("9parent_id.txt", "w") as parentfile:
+    for parids in parents_id:
+        parentfile.write(str(parids) + "\n")
 
 print("done")
