@@ -13,7 +13,7 @@ SCOPES = 'https://www.googleapis.com/auth/drive'
 store = file.Storage('storage.json')
 creds = store.get()
 
-text = open("filelist_new1.txt", 'w')
+text = open("filelist1_new.txt", 'w')
 text.close()
 
 if not creds or creds.invalid:
@@ -40,7 +40,7 @@ def retrieve_all_files(service):
                 param['pageToken'] = page_token
             files = service.files().list(**param).execute()
             # print(files)
-            text = open("filelist_new1.txt", 'a')
+            text = open("filelist1_new.txt", 'a')
             text.write(str(files["items"]))
             text.close()
             # result.extend(files['items'])
