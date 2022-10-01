@@ -33,13 +33,13 @@ while True:
         else: #Root에 있음
             parents_id.append("Root")
     except: #공유받은 파일
-        if file["ownerNames"] in owner_list:
-            parents_id.append("None")
-        else: #가현이, 나 아니면 제거
-            title.pop()
-            id.pop()
-            n += 1
-            continue
+#         if file["ownerNames"] in owner_list:
+	parents_id.append("None")
+#         else: #가현이, 나 아니면 제거
+#             title.pop()
+#             id.pop()
+#             n += 1
+#             continue
     try: #File
         d_link.append(file["webContentLink"] + "&confirm=t")
     except: #Folder
