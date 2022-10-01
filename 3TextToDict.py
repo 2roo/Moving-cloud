@@ -1,31 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@2roo 
-2roo
-/
-Moving-cloud
-Private
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-Settings
-Moving-cloud/3TextToDict.py /
-@2roo
-2roo Update 3TextToDict.py
-Latest commit 034b38a now
- History
- 1 contributor
-107 lines (90 sloc)  2.91 KB
-
 import json
 import ast
 
